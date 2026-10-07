@@ -1,0 +1,36 @@
+@model List<CursosMVC.Models.Curso>
+
+<h1>Sistema de Cursos</h1>
+
+<p>
+    <a href="/Curso/Index">Todos</a> |
+    <a href="/Curso/Disponiveis">Disponíveis</a> |
+    <a href="/Curso/Online">Online</a> |
+    <a href="/Curso/Presenciais">Presenciais</a> |
+    <a href="/Curso/Resumo">Resumo</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>Curso</th>
+        <th>Carga Horária</th>
+        <th>Modalidade</th>
+        <th>Vagas</th>
+        <th>Valor</th>
+        <th>Situação</th>
+    </tr>
+
+    @foreach (var curso in Model)
+    {
+        <tr>
+            <td>@curso.Nome</td>
+            <td>@curso.CargaHoraria horas</td>
+            <td>@curso.Modalidade</td>
+            <td>@curso.Vagas</td>
+            <td>R$ @curso.Valor</td>
+            <td>
+                @(curso.Vagas > 0 ? "Inscrições abertas" : "Turma lotada")
+            </td>
+        </tr>
+    }
+</table>

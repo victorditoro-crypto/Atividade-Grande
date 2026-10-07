@@ -1,0 +1,8 @@
+@model List<CursosMVC.Models.Curso>
+
+<h1>Cursos Presenciais</h1>
+
+@foreach (var curso in Model)
+{
+    <p>@curso.Nome - @curso.CargaHoraria horas</p>
+}

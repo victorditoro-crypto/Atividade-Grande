@@ -1,0 +1,22 @@
+@model dynamic
+
+<h1>Quartos</h1>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Capacidade</th>
+        <th>Descrição</th>
+        <th>Valor da diária</th>
+    </tr>
+
+    @foreach (var quarto in Model)
+    {
+        <tr>
+            <td>@quarto.Nome</td>
+            <td>@quarto.Capacidade pessoas</td>
+            <td>@quarto.Descricao</td>
+            <td>R$ @quarto.Valor</td>
+        </tr>
+    }
+</table>

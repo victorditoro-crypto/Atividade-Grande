@@ -1,0 +1,32 @@
+@model List<NotasMVC.Models.Aluno>
+
+<h1>Sistema de Notas</h1>
+
+<p>
+    <a href="/Aluno/Index">Todos</a> |
+    <a href="/Aluno/Aprovados">Aprovados</a> |
+    <a href="/Aluno/Recuperacao">Recuperação</a> |
+    <a href="/Aluno/Reprovados">Reprovados</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>Aluno</th>
+        <th>Curso</th>
+        <th>Média</th>
+        <th>Situação</th>
+    </tr>
+
+    @foreach (var aluno in Model)
+    {
+        <tr>
+            <td>@aluno.Nome</td>
+            <td>@aluno.Curso</td>
+            <td>@aluno.Media.ToString("0.00")</td>
+            <td>
+                @(aluno.Media >= 6 ? "Aprovado" :
+                  aluno.Media >= 4 ? "Recuperação" : "Reprovado")
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,15 @@
+@model List<PedidosMVC.Models.Pedido>
+
+<h1>Dashboard</h1>
+
+<p>Total de pedidos: @Model.Count</p>
+
+<p>Valor total: R$ @Model.Sum(p => p.Total)</p>
+
+<p>Recebidos: @Model.Count(p => p.Status == "Recebido")</p>
+
+<p>Em preparo: @Model.Count(p => p.Status == "Em preparo")</p>
+
+<p>Prontos: @Model.Count(p => p.Status == "Pronto")</p>
+
+<p>Entregues: @Model.Count(p => p.Status == "Entregue")</p>

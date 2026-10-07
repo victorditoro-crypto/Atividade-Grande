@@ -1,0 +1,8 @@
+@model List<NotasMVC.Models.Aluno>
+
+<h1>Alunos em Recuperação</h1>
+
+@foreach (var aluno in Model)
+{
+    <p>@aluno.Nome - Média: @aluno.Media.ToString("0.00")</p>
+}

@@ -1,0 +1,28 @@
+@model List<EletronicosMVC.Models.Eletronico>
+
+<h1>Loja de Eletrônicos</h1>
+
+<a href="/Eletronico/EmEstoque">Produtos em estoque</a>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Marca</th>
+        <th>Categoria</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        <th>Situação</th>
+    </tr>
+
+    @foreach (var produto in Model)
+    {
+        <tr>
+            <td>@produto.Nome</td>
+            <td>@produto.Marca</td>
+            <td>@produto.Categoria</td>
+            <td>R$ @produto.Preco</td>
+            <td>@produto.Estoque</td>
+            <td>@(produto.Estoque > 0 ? "Disponível" : "Produto esgotado")</td>
+        </tr>
+    }
+</table>

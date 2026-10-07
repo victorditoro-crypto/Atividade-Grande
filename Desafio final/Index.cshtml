@@ -1,0 +1,41 @@
+@model List<CadastroMVC.Models.Funcionario>
+
+<h1>Cadastro de Funcionários</h1>
+
+<p>
+    <a href="/Funcionario/Index">Todos</a> |
+    <a href="/Funcionario/Ativos">Ativos</a> |
+    <a href="/Funcionario/Inativos">Inativos</a> |
+    <a href="/Funcionario/Dashboard">Dashboard</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Cargo</th>
+        <th>Departamento</th>
+        <th>Salário</th>
+        <th>Situação</th>
+        <th>Faixa</th>
+    </tr>
+
+    @foreach (var funcionario in Model)
+    {
+        <tr>
+            <td>@funcionario.Nome</td>
+            <td>@funcionario.Cargo</td>
+            <td>@funcionario.Departamento</td>
+            <td>R$ @funcionario.Salario</td>
+
+            <td>
+                @(funcionario.Ativo ? "Funcionário ativo" : "Funcionário desligado")
+            </td>
+
+            <td>
+                @(funcionario.Salario < 2500 ? "Faixa 1" :
+                  funcionario.Salario <= 5000 ? "Faixa 2" :
+                  "Faixa 3")
+            </td>
+        </tr>
+    }
+</table>

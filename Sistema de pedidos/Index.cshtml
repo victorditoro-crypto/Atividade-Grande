@@ -1,0 +1,34 @@
+@model List<PedidosMVC.Models.Pedido>
+
+<h1>Sistema de Pedidos</h1>
+
+<p>
+    <a href="/Pedido/Index">Todos</a> |
+    <a href="/Pedido/EmPreparo">Em preparo</a> |
+    <a href="/Pedido/Prontos">Prontos</a> |
+    <a href="/Pedido/Entregues">Entregues</a> |
+    <a href="/Pedido/Dashboard">Dashboard</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>Cliente</th>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+        <th>Total</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var pedido in Model)
+    {
+        <tr>
+            <td>@pedido.Cliente</td>
+            <td>@pedido.Produto</td>
+            <td>@pedido.Quantidade</td>
+            <td>R$ @pedido.PrecoUnitario</td>
+            <td>R$ @pedido.Total</td>
+            <td>@pedido.Status</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,8 @@
+@model List<CatalogoMVC.Models.Produto>
+
+<h1>Produtos Disponíveis</h1>
+
+@foreach (var produto in Model)
+{
+    <p>@produto.Nome - R$ @produto.Preco</p>
+}

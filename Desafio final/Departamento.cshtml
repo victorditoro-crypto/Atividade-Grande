@@ -1,0 +1,12 @@
+@model List<CadastroMVC.Models.Funcionario>
+
+<h1>Funcionários do Departamento</h1>
+
+@foreach (var funcionario in Model)
+{
+    <p>
+        @funcionario.Nome -
+        @funcionario.Cargo -
+        R$ @funcionario.Salario
+    </p>
+}

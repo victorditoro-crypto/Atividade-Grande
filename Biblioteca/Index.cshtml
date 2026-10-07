@@ -1,0 +1,26 @@
+@model List<BibliotecaMVC.Models.Livro>
+
+<h1>Biblioteca</h1>
+
+<table border="1">
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Ano</th>
+        <th>Situação</th>
+    </tr>
+
+    @foreach (var livro in Model)
+    {
+        <tr>
+            <td>@livro.Titulo</td>
+            <td>@livro.Autor</td>
+            <td>@livro.Ano</td>
+            <td>
+                @(livro.Disponivel ? "Disponível para empréstimo" : "Emprestado")
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Biblioteca/Disponiveis">Ver livros disponíveis</a>

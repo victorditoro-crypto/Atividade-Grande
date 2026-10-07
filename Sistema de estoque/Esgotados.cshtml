@@ -1,0 +1,8 @@
+@model List<EstoqueMVC.Models.Produto>
+
+<h1>Produtos Esgotados</h1>
+
+@foreach (var produto in Model)
+{
+    <p>@produto.Nome</p>
+}

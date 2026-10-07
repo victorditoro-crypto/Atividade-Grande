@@ -1,0 +1,8 @@
+@model List<PedidosMVC.Models.Pedido>
+
+<h1>Pedidos em Preparo</h1>
+
+@foreach (var pedido in Model)
+{
+    <p>@pedido.Cliente - @pedido.Produto - R$ @pedido.Total</p>
+}

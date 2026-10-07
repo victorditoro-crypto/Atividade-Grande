@@ -1,0 +1,10 @@
+@model List<VeterinariaMVC.Models.Animal>
+
+<h1>Gatos</h1>
+
+@foreach (var animal in Model)
+{
+    <p>@animal.Nome - @animal.Idade anos - Dono: @animal.Dono</p>
+}
+
+<a href="/Veterinaria/Index">Voltar</a>

@@ -1,0 +1,37 @@
+@model List<EstoqueMVC.Models.Produto>
+
+<h1>Sistema de Estoque</h1>
+
+<p>
+    <a href="/Estoque/Index">Todos</a> |
+    <a href="/Estoque/Baixo">Estoque baixo</a> |
+    <a href="/Estoque/Esgotados">Esgotados</a> |
+    <a href="/Estoque/Alertas">Alertas</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>Produto</th>
+        <th>Categoria</th>
+        <th>Estoque</th>
+        <th>Mínimo</th>
+        <th>Preço</th>
+        <th>Situação</th>
+    </tr>
+
+    @foreach (var produto in Model)
+    {
+        <tr>
+            <td>@produto.Nome</td>
+            <td>@produto.Categoria</td>
+            <td>@produto.Estoque</td>
+            <td>@produto.EstoqueMinimo</td>
+            <td>R$ @produto.Preco</td>
+            <td>
+                @(produto.Estoque == 0 ? "ESGOTADO" :
+                  produto.Estoque <= produto.EstoqueMinimo ? "ESTOQUE BAIXO" :
+                  "ESTOQUE NORMAL")
+            </td>
+        </tr>
+    }
+</table>

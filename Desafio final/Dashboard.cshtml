@@ -1,0 +1,25 @@
+@model List<CadastroMVC.Models.Funcionario>
+
+<h1>Dashboard</h1>
+
+<p>Total de funcionários: @Model.Count</p>
+
+<p>Funcionários ativos: @Model.Count(f => f.Ativo)</p>
+
+<p>Funcionários inativos: @Model.Count(f => !f.Ativo)</p>
+
+<p>TI: @Model.Count(f => f.Departamento == "TI")</p>
+
+<p>RH: @Model.Count(f => f.Departamento == "RH")</p>
+
+<p>Financeiro: @Model.Count(f => f.Departamento == "Financeiro")</p>
+
+<p>Vendas: @Model.Count(f => f.Departamento == "Vendas")</p>
+
+<p>Administração: @Model.Count(f => f.Departamento == "Administração")</p>
+
+<p>Média salarial: R$ @Model.Average(f => f.Salario).ToString("0.00")</p>
+
+<p>Maior salário: R$ @Model.Max(f => f.Salario)</p>
+
+<p>Menor salário: R$ @Model.Min(f => f.Salario)</p>

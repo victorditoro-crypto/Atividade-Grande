@@ -1,0 +1,8 @@
+@model List<EletronicosMVC.Models.Eletronico>
+
+<h1>Produtos da Categoria</h1>
+
+@foreach (var produto in Model)
+{
+    <p>@produto.Nome - @produto.Categoria - R$ @produto.Preco</p>
+}

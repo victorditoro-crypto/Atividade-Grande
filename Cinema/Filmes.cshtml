@@ -1,0 +1,22 @@
+@model dynamic
+
+<h1>Filmes</h1>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Gênero</th>
+        <th>Classificação</th>
+        <th>Horário</th>
+    </tr>
+
+    @foreach (var filme in Model)
+    {
+        <tr>
+            <td>@filme.Nome</td>
+            <td>@filme.Genero</td>
+            <td>@filme.Classificacao</td>
+            <td>@filme.Horario</td>
+        </tr>
+    }
+</table>

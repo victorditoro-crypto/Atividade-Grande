@@ -1,0 +1,13 @@
+@model List<CursosMVC.Models.Curso>
+
+<h1>Resumo dos Cursos</h1>
+
+<p>Total de cursos: @Model.Count</p>
+
+<p>Disponíveis: @Model.Count(c => c.Vagas > 0)</p>
+
+<p>Turmas lotadas: @Model.Count(c => c.Vagas == 0)</p>
+
+<p>Online: @Model.Count(c => c.Modalidade == "Online")</p>
+
+<p>Presenciais: @Model.Count(c => c.Modalidade == "Presencial")</p>
